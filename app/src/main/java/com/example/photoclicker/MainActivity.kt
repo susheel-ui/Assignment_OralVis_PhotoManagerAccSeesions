@@ -48,8 +48,6 @@ class MainActivity : AppCompatActivity() {
                 imageList.add(currentImageBitmp)
                 binding.ImageViewRV.adapter?.notifyDataSetChanged()
             }
-//            binding.imageView.setImageURI(null)
-//            binding.imageView.setImageURI(imageUri)
 
 
     }
@@ -131,15 +129,6 @@ class MainActivity : AppCompatActivity() {
     private fun saveBitmapToFile(bitmap: Bitmap, sessionId: String): Uri? {
         val appName = getString(R.string.app_name)// change to your app name
 
-//        val mediaDir = File(
-//            Environment.getExternalStorageDirectory(),
-//            "Android/Media/$appName/Sessions/$sessionId"
-//        )
-//
-//
-//        if (!mediaDir.exists()) {
-//            mediaDir.mkdirs()
-//        }
         val resolver = applicationContext.contentResolver
         val contentValues = ContentValues().apply {
             put(MediaStore.Images.Media.DISPLAY_NAME, "img_${System.currentTimeMillis()}.jpg")
@@ -166,17 +155,5 @@ class MainActivity : AppCompatActivity() {
             null
         }
 
-//        val fileName = "img_${System.currentTimeMillis()}"
-//        val file = File.createTempFile(fileName, ".jpg", mediaDir)
-
-//        return try {
-//            FileOutputStream(file).use { out ->
-//                bitmap.compress(Bitmap.CompressFormat.JPEG, 100, out)
-//            }
-//            Uri.fromFile(file)
-//        } catch (e: Exception) {
-//            e.printStackTrace()
-//            null
-//        }
     }
 }
