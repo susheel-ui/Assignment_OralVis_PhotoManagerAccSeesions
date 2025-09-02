@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+  <TextView
+      android:id="@+id/SessionIdTag"
+      android:text="SeesionIdTag :- "
+      android:textColor="@color/black"
+      android:textSize="20dp"
+      android:textStyle="bold"
+      android:layout_marginTop="20dp"
+      android:layout_marginStart="16dp"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      />
+  <TextView
+      android:id="@+id/sessionIdTextField"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:textSize="15dp"
+      android:text="SeesionIdxyz"
+      android:textStyle="italic"
+      app:layout_constraintTop_toTopOf="@id/SessionIdTag"
+      app:layout_constraintStart_toEndOf="@id/SessionIdTag"
+      app:layout_constraintBottom_toBottomOf="@id/SessionIdTag"
+      />
+
+  <EditText
+      android:id="@+id/EtName"
+      android:layout_width="match_parent"
+      android:layout_height="50dp"
+      android:layout_margin="20dp"
+      android:hint="Enter Name"
+      app:layout_constraintTop_toBottomOf="@id/SessionIdTag"
+      app:layout_constraintStart_toStartOf="@id/SessionIdTag"
+      />
+  <EditText
+      android:id="@+id/EtAge"
+      android:layout_width="match_parent"
+      android:layout_height="50dp"
+      android:hint="Enter Age"
+      android:layout_margin="20dp"
+      app:layout_constraintStart_toStartOf="@id/EtName"
+      app:layout_constraintEnd_toEndOf="@id/EtName"
+      app:layout_constraintTop_toBottomOf="@id/EtName"
+      />
+
+  <androidx.recyclerview.widget.RecyclerView
+      android:id="@+id/ImageViewRV"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      app:layout_constraintTop_toBottomOf="@id/EtAge"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      />
+
+ <LinearLayout
+     android:id="@+id/bottomSection"
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+     app:layout_constraintBottom_toBottomOf="parent"
+     app:layout_constraintStart_toStartOf="parent"
+     app:layout_constraintEnd_toEndOf="parent"
+     android:gravity="center"
+     >
+   <Button
+       android:id="@+id/btnClickPic"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:text="Click Pic"
+       android:layout_margin="20dp"
+       android:backgroundTint="@color/black"
+       />
+   <Button
+       android:id="@+id/btnSaveSession"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:text="Save"
+       android:layout_margin="20dp"
+       android:backgroundTint="@color/Green"
+       />
+
+
+ </LinearLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btnSearch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/bottomSection"
+        android:layout_margin="10dp"
+        android:src="@drawable/searchicon"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
